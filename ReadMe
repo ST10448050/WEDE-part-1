@@ -1,0 +1,32 @@
+🚀 How to Run
+
+Download or clone this repository:
+
+git clone https://github.com/your-username/urban-threads.git
+
+
+Open the project folder.
+
+Open index.html in any web browser (Chrome, Firefox, Edge, etc.).
+
+Use the navigation menu to explore the other pages.
+
+🧪 Testing & Debugging
+
+Navigation links checked to ensure they work across all pages.
+
+HTML validated for structure and indentation.
+
+💡 Notes
+
+This project focuses on HTML only (no CSS or JavaScript).
+
+Comments are included in the code for readability and documentation.
+
+Additional styling and interactivity can be added in the future using CSS and JS.
+
+📖 Author
+
+Philip Wagner
+
+Module: Web Development / Internet Application
