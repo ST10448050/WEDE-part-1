@@ -1,0 +1,605 @@
+/* === CSS RESET === */
+/* Reset margins, paddings, borders, and default styles */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Remove default list styles */
+ul, ol {
+  list-style: none;
+}
+
+/* Remove default link styles */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Reset images and videos to be responsive */
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Reset form elements */
+button, input, select, textarea {
+  font: inherit;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+/* === BASE STYLES === */
+
+/* Set base font family, size, and line-height */
+html {
+  font-size: 16px; /* Default font size */
+  line-height: 1.5;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color-scheme: light dark; /* Enables auto dark mode if preferred */
+}
+
+/* Default body styles */
+body {
+  background-color: #f8f9fa; /* Light gray background */
+  color: #212529; /* Dark text color */
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Default headings styling */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
+  color: #212529;
+  margin-bottom: 0.5rem;
+}
+
+/* Paragraphs */
+p {
+  margin-bottom: 1rem;
+  color: #495057;
+  font-size: 1rem;
+}
+
+/* Links */
+a:hover {
+  color: #0d6efd; /* Blue hover color */
+}
+
+/* Buttons */
+button {
+  cursor: pointer;
+  background-color: #0d6efd;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #0b5ed7;
+}
+
+/* Utility classes for spacing */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+/* === BASE TYPOGRAPHY STYLES === */
+
+/* Set up base font properties on html or body */
+html {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-size: 16px; /* Base font size */
+    line-height: 1.5; /* Comfortable line spacing */
+    letter-spacing: 0.5px; /* Slight spacing for readability */
+    color: #212529;
+  }
+  
+  /* --- Typography Scale using REM units ---
+     Base font size = 1rem = 16px
+     Larger headings follow a modular scale (e.g., 1.25 or 1.333)
+  */
+  
+  /* Headings - Modular Scale: 1.25 */
+  h1 {
+    font-size: 2.5rem; /* ~40px */
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.5px; /* Slightly tighter for large text */
+    margin-bottom: 1rem;
+  }
+  
+  h2 {
+    font-size: 2rem; /* ~32px */
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: -0.25px;
+    margin-bottom: 0.75rem;
+  }
+  
+  h3 {
+    font-size: 1.75rem; /* ~28px */
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: 0;
+    margin-bottom: 0.5rem;
+  }
+  
+  h4 {
+    font-size: 1.5rem; /* ~24px */
+    font-weight: 500;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+  }
+  
+  h5 {
+    font-size: 1.25rem; /* ~20px */
+    font-weight: 500;
+    line-height: 1.4;
+    margin-bottom: 0.25rem;
+  }
+  
+  h6 {
+    font-size: 1rem; /* ~16px */
+    font-weight: 500;
+    line-height: 1.4;
+    margin-bottom: 0.25rem;
+  }
+  
+  /* Paragraphs and body text */
+  p {
+    font-size: 1rem; /* Base = 16px */
+    line-height: 1.6;
+    letter-spacing: 0.25px;
+    margin-bottom: 1rem;
+  }
+  
+  /* Small text, captions */
+  .small-text {
+    font-size: 0.875rem; /* ~14px */
+    line-height: 1.4;
+    color: #6c757d;
+  }
+  
+  /* Links */
+  a {
+    color: #0d6efd;
+    text-decoration: none;
+    letter-spacing: 0.25px;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Blockquote Styling */
+  blockquote {
+    font-size: 1.25rem;
+    font-style: italic;
+    color: #495057;
+    margin: 1.5rem 0;
+    padding-left: 1rem;
+    border-left: 4px solid #0d6efd;
+  }
+  
+  /* Utility class for text centering */
+  .text-center {
+    text-align: center;
+  }
+/* === Base Layout Styling === */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f8f9fa;
+    color: #212529;
+  }
+  
+  /* Define a grid layout for the page structure */
+  .layout {
+    display: grid;
+    grid-template-areas:
+      "header header header"
+      "sidebar main rightbar"
+      "footer footer footer";
+    grid-template-columns: 200px 1fr 250px; /* Sidebar, Main, Rightbar */
+    grid-template-rows: 70px 1fr 50px; /* Header, Content, Footer */
+    height: 100vh;
+  }
+  
+  /* Grid areas */
+  header {
+    grid-area: header;
+    background: #0d6efd;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+  
+  .sidebar {
+    grid-area: sidebar;
+    background: #e9ecef;
+    padding: 20px;
+  }
+  
+  .main {
+    grid-area: main;
+    background: white;
+    padding: 20px;
+  }
+  
+  .rightbar {
+    grid-area: rightbar;
+    background: #f1f3f5;
+    padding: 20px;
+  }
+  
+  footer {
+    grid-area: footer;
+    background: #343a40;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* === FLEXBOX INSIDE EACH SECTION === */
+  
+  /* Header: Flex for navigation links */
+  header nav {
+    display: flex;
+    gap: 20px;
+  }
+  
+  header nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  header nav a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Sidebar: Vertical menu using flex */
+  .sidebar ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .sidebar ul li {
+    list-style: none;
+  }
+  
+  .sidebar ul li a {
+    color: #212529;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .sidebar ul li a:hover {
+    color: #0d6efd;
+  }
+  
+  /* Main Content: Using flex for inner layout if needed */
+  .main .content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* Rightbar: Stack widgets using flex */
+  .rightbar .widget {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+    background: white;
+    padding: 10px;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+/* === GLOBAL COLORS & VARIABLES === */
+:root {
+    --primary: #0d6efd;
+    --primary-dark: #0b5ed7;
+    --secondary: #6c757d;
+    --light: #f8f9fa;
+    --dark: #212529;
+    --white: #ffffff;
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* === GENERAL PAGE STYLING === */
+  body {
+    background-color: var(--light);
+    color: var(--dark);
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* === HEADINGS & TEXT === */
+  h1, h2, h3, h4 {
+    color: var(--dark);
+  }
+  
+  p {
+    color: var(--secondary);
+  }
+  
+  /* === LINKS === */
+  a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  a:hover {
+    color: var(--primary-dark);
+  }
+  
+  a:active {
+    color: #084298;
+  }
+  
+  /* === BUTTONS === */
+  .button {
+    display: inline-block;
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+  }
+  
+  .button:hover {
+    background-color: var(--primary-dark);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .button:active {
+    background-color: #084298;
+    transform: scale(0.97);
+  }
+  
+  .button:focus {
+    outline: 3px solid rgba(13, 110, 253, 0.5);
+    outline-offset: 2px;
+  }
+  
+  /* === CARDS / CONTAINERS === */
+  .card {
+    background: var(--white);
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* === FORM INPUTS === */
+  input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    background-color: var(--white);
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  input:focus, textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.25);
+    outline: none;
+  }
+  
+  /* === NAVIGATION === */
+  nav {
+    background-color: var(--primary);
+    padding: 10px 20px;
+    box-shadow: var(--shadow);
+  }
+  
+  nav a {
+    color: var(--white);
+    margin-right: 20px;
+    transition: color 0.3s ease;
+  }
+  
+  nav a:hover {
+    color: var(--light);
+  }
+/* === Base Styles for Desktop (Default) === */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    background: #f8f9fa;
+    color: #212529;
+  }
+  
+  /* Layout for Desktop - Multi-Column */
+  .container {
+    display: grid;
+    grid-template-columns: 200px 1fr 250px; /* Sidebar, Main, Rightbar */
+    grid-gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  header, footer {
+    grid-column: 1 / -1; /* Full width */
+    padding: 15px;
+    background: #0d6efd;
+    color: white;
+    text-align: center;
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    background: #e9ecef;
+    padding: 20px;
+  }
+  
+  /* Main content */
+  .main {
+    background: white;
+    padding: 20px;
+  }
+  
+  /* Rightbar */
+  .rightbar {
+    background: #f1f3f5;
+    padding: 20px;
+  }
+  
+  /* Navigation links inside header */
+  header nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  header nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  /* === Breakpoints === */
+  
+  /* Tablet: 768px - Switch to two columns, reduce font size */
+  @media (max-width: 1024px) {
+    .container {
+      grid-template-columns: 200px 1fr; /* Sidebar + Main only */
+    }
+  
+    .rightbar {
+      display: none; /* Hide rightbar on tablet */
+    }
+  
+    body {
+      font-size: 15px;
+    }
+  
+    header nav {
+      flex-wrap: wrap;
+    }
+  }
+  
+  /* Mobile: 600px - Single column layout */
+  @media (max-width: 600px) {
+    .container {
+      display: flex;
+      flex-direction: column; /* Stack all sections vertically */
+    }
+  
+    header nav {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+  
+    body {
+      font-size: 14px; /* Smaller font for mobile */
+    }
+  
+    .sidebar, .rightbar {
+      display: none; /* Hide sidebars on mobile */
+    }
+  }
+/* === Base Settings with Relative Units === */
+html {
+    font-size: 100%; /* 1rem = 16px by default */
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 1rem; /* Responsive text base size */
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    color: #212529;
+    background-color: #f8f9fa;
+  }
+  
+  /* Container uses % for responsive width */
+  .container {
+    max-width: 90%; /* Responsive width */
+    margin: 0 auto;
+    padding: 1rem; /* Responsive spacing */
+  }
+  
+  /* Headings use rem for consistent scaling */
+  h1 {
+    font-size: 2.5rem; /* Scales with root font size */
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+  
+  p {
+    font-size: 1rem;
+  }
+  
+  /* Responsive Image Container */
+  .responsive-img {
+    width: 100%; /* Takes full width of parent */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Make images responsive inside flex/grid containers */
+  .img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  
+  /* Test & Iterate: Visual helper for testing layouts */
+  .debug-border {
+    border: 1px dashed #adb5bd;
+  }
+  
+  /* Responsive Layout Breakpoints */
+  @media (max-width: 1024px) {
+    body {
+      font-size: 0.95rem;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    body {
+      font-size: 0.9rem;
+    }
+  
+    h1 {
+      font-size: 2rem;
+    }
+  }
